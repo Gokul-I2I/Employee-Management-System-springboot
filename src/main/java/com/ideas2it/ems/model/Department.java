@@ -1,7 +1,10 @@
 package com.ideas2it.ems.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.Set;
 
 /**
  * This class represents the model of the Department details.
@@ -21,9 +24,13 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int departmentId;
 
-    @Column(name = "name")
+    @Column(unique = true, nullable = false)
     private String departmentName;
 
-    @Column(name = "is_deleted")
-    private boolean is_Deleted;
+    @Column
+    private boolean isDeleted;
+
+    @OneToMany(mappedBy = "department", fetch = FetchType.EAGER)
+    @JsonIgnore
+    Set<Employee> employees;
 }

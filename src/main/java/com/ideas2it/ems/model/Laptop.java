@@ -21,9 +21,16 @@ public class Laptop {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int laptopId;
 
-    @Column(name = "name")
+    @Column(nullable = false, unique = true)
     private String laptopName;
 
-    @Column(name = "is_deleted")
-    private boolean is_Deleted;
+    @Column
+    private boolean isDeleted;
+
+    @OneToOne(mappedBy = "laptop", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Employee employee;
+
+    public Laptop(String laptopName) {
+        this.laptopName = laptopName;
+    }
 }

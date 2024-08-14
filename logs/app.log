@@ -1,0 +1,136 @@
+[INFO ] 2024-08-13 17:18:00.456 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 14776 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:18:00.474 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:18:00.476 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:20:35.401 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 13724 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:20:35.413 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:20:35.414 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:25:56.004 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 15016 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:25:56.020 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:25:56.021 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:26:01.459 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 17364 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:26:01.494 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:26:01.497 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:26:54.327 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 13412 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:26:54.341 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:26:54.343 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:33:25.720 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 17140 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:33:25.741 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:33:25.742 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:35:01.726 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 16404 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:35:01.751 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:35:01.754 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:37:15.025 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 10212 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:37:15.044 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:37:15.047 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:38:00.034 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 17032 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:38:00.048 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:38:00.049 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:39:49.612 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 16520 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:39:49.629 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:39:49.630 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:51:39.932 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 13012 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:51:39.944 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:51:39.946 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:57:48.995 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 3956 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:57:49.012 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:57:49.014 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:59:06.968 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 3800 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:59:06.984 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:59:06.986 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 17:59:10.928 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 16392 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 17:59:10.951 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 17:59:10.954 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:02:43.159 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 17084 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:02:43.174 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:02:43.175 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:05:10.359 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 1784 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:05:10.376 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:05:10.377 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:05:16.919 [main] EmsApplication - Started EmsApplication in 7.118 seconds (process running for 8.675)
+[INFO ] 2024-08-13 18:10:18.495 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 12268 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:10:18.510 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:10:18.512 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:10:25.271 [main] EmsApplication - Started EmsApplication in 7.318 seconds (process running for 8.893)
+[INFO ] 2024-08-13 18:18:59.855 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 9500 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:18:59.872 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:18:59.875 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:19:10.905 [main] EmsApplication - Started EmsApplication in 11.637 seconds (process running for 13.17)
+[INFO ] 2024-08-13 18:20:28.337 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 11292 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:20:28.351 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:20:28.352 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:20:34.604 [main] EmsApplication - Started EmsApplication in 6.906 seconds (process running for 8.437)
+[INFO ] 2024-08-13 18:25:02.073 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 9464 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:25:02.091 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:25:02.092 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:25:08.373 [main] EmsApplication - Started EmsApplication in 6.896 seconds (process running for 8.496)
+[INFO ] 2024-08-13 18:28:01.331 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 14008 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:28:01.342 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:28:01.343 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:28:07.580 [main] EmsApplication - Started EmsApplication in 6.834 seconds (process running for 8.968)
+[INFO ] 2024-08-13 18:30:11.905 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 14972 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:30:11.919 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:30:11.922 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:30:19.418 [main] EmsApplication - Started EmsApplication in 8.109 seconds (process running for 9.784)
+[INFO ] 2024-08-13 18:30:58.806 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 8876 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:30:58.821 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:30:58.822 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:31:05.409 [main] EmsApplication - Started EmsApplication in 7.15 seconds (process running for 8.766)
+[INFO ] 2024-08-13 18:32:27.807 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 4976 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:32:27.822 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:32:27.824 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:32:34.664 [main] EmsApplication - Started EmsApplication in 7.426 seconds (process running for 9.036)
+[INFO ] 2024-08-13 18:34:18.788 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 6168 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:34:18.803 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:34:18.804 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:34:25.315 [main] EmsApplication - Started EmsApplication in 7.118 seconds (process running for 8.91)
+[INFO ] 2024-08-13 18:40:24.379 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 14116 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:40:24.389 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:40:24.391 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:40:31.648 [main] EmsApplication - Started EmsApplication in 7.879 seconds (process running for 9.523)
+[INFO ] 2024-08-13 18:44:55.918 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 15752 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 18:44:55.931 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 18:44:55.933 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 18:45:02.231 [main] EmsApplication - Started EmsApplication in 6.932 seconds (process running for 8.594)
+[INFO ] 2024-08-13 19:00:13.006 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 6808 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 19:00:13.021 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 19:00:13.023 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 19:00:19.621 [main] EmsApplication - Started EmsApplication in 7.183 seconds (process running for 8.845)
+[INFO ] 2024-08-13 19:03:36.212 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 15512 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 19:03:36.226 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 19:03:36.227 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 19:03:42.802 [main] EmsApplication - Started EmsApplication in 7.168 seconds (process running for 8.793)
+[INFO ] 2024-08-13 19:06:11.812 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 8876 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 19:06:11.827 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 19:06:11.829 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 19:06:18.144 [main] EmsApplication - Started EmsApplication in 6.945 seconds (process running for 8.498)
+[INFO ] 2024-08-13 19:07:58.355 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 12824 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 19:07:58.370 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 19:07:58.372 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 19:08:04.742 [main] EmsApplication - Started EmsApplication in 7.008 seconds (process running for 8.648)
+[INFO ] 2024-08-13 19:15:38.437 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 15128 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 19:15:38.451 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 19:15:38.452 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 19:15:44.757 [main] EmsApplication - Started EmsApplication in 6.895 seconds (process running for 8.464)
+[INFO ] 2024-08-13 19:28:25.464 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 12628 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 19:28:25.479 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 19:28:25.480 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 19:28:32.512 [main] EmsApplication - Started EmsApplication in 7.629 seconds (process running for 9.188)
+[INFO ] 2024-08-13 19:29:52.624 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 16168 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 19:29:52.638 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 19:29:52.640 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 19:29:58.837 [main] EmsApplication - Started EmsApplication in 6.79 seconds (process running for 8.347)
+[INFO ] 2024-08-13 19:38:29.589 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 10068 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 19:38:29.601 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 19:38:29.602 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 19:38:35.903 [main] EmsApplication - Started EmsApplication in 6.86 seconds (process running for 8.415)
+[INFO ] 2024-08-13 22:25:34.727 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 3224 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-13 22:25:34.741 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-13 22:25:34.743 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-13 22:25:41.134 [main] EmsApplication - Started EmsApplication in 7.006 seconds (process running for 8.619)
+[INFO ] 2024-08-14 10:38:12.133 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 16240 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-14 10:38:12.148 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-14 10:38:12.151 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-14 10:40:14.199 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 4112 (C:\java (1)\ems\target\classes started by postgres in C:\java (1)\ems)
+[DEBUG] 2024-08-14 10:40:14.211 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+[INFO ] 2024-08-14 10:40:14.212 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2024-08-14 10:40:20.312 [main] EmsApplication - Started EmsApplication in 6.645 seconds (process running for 8.218)
