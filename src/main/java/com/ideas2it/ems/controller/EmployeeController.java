@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.ideas2it.ems.dto.EmployeeDto;
 import com.ideas2it.ems.service.EmployeeService;
-import com.ideas2it.ems.service.LaptopService;
 
 @RestController
 @RequestMapping("api/v1/employees")
@@ -19,8 +18,7 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
-    @Autowired
-    private LaptopService laptopService;
+
     private static final Logger LOGGER = LogManager.getLogger(EmployeeController.class);
 
     /**
@@ -31,14 +29,10 @@ public class EmployeeController {
      */
     @PostMapping
     public ResponseEntity<EmployeeDto> addEmployee(@RequestBody EmployeeDto employeeDto) {
-        try {
-            employeeDto = employeeService.addEmployee(employeeDto);
-            LOGGER.debug("Add employee details to Database {}", employeeDto.getId());
-            return new ResponseEntity<>(employeeDto, HttpStatus.CREATED);
-        } catch (Exception e) {
-            LOGGER.warn("Error in employee created {}", employeeDto.getName(), e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("Add employee details to Database {}", employeeDto.getName());
+        var employee = employeeService.addEmployee(employeeDto);
+        LOGGER.info("Employee added ");
+        return new ResponseEntity<>(employee, HttpStatus.CREATED);
     }
 
     /**
@@ -47,15 +41,12 @@ public class EmployeeController {
      * @param id : id of the employee
      * @return employeeDto with Http status No_Content.
      */
-    @PutMapping("/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<EmployeeDto> deleteEmployee(@PathVariable int id) {
-        try {
-            LOGGER.debug("Delete employee by id{}", id);
-            return new ResponseEntity<>(employeeService.deleteEmployee(id), HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            LOGGER.warn("Error in employee delete {}", id, e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("Delete employee by id{}", id);
+        EmployeeDto employeeDto = employeeService.deleteEmployee(id);
+        LOGGER.info("Delete employee details by id {}", id);
+        return new ResponseEntity<>(employeeDto, HttpStatus.GONE);
     }
 
     /**
@@ -66,12 +57,13 @@ public class EmployeeController {
      */
     @PutMapping
     public ResponseEntity<EmployeeDto> updateEmployee(@RequestBody EmployeeDto employeeDto) {
-        try {
-            LOGGER.debug("Update employee details by id{}", employeeDto.getId());
-            return new ResponseEntity<>(employeeService.updateEmployee(employeeDto), HttpStatus.FOUND);
-        } catch (Exception e) {
-            LOGGER.warn("Error in update employee {}", employeeDto.getId(), e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        LOGGER.debug("Update employee details by id{}", employeeDto.getId());
+        employeeDto = employeeService.updateEmployee(employeeDto);
+        if (employeeDto != null) {
+            LOGGER.info("Update employee details by id {}", employeeDto.getId());
+            return new ResponseEntity<>(employeeDto, HttpStatus.ACCEPTED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -82,28 +74,31 @@ public class EmployeeController {
      * @return EmployeeDto with Http status Found.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<EmployeeDto> retrieveEmployeeById(@PathVariable int id) {
-        var employeeDto = employeeService.retrieveEmployeeById(id);
+    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable int id) {
+        LOGGER.debug("Get employee by id");
+        EmployeeDto employeeDto = employeeService.retrieveEmployeeById(id);
         if (employeeDto != null) {
-            return ResponseEntity.ok(employeeDto);
+            LOGGER.info("Get Employee by id {}", id);
+            return new ResponseEntity<>(employeeDto, HttpStatus.FOUND);
         } else {
-            return ResponseEntity.notFound().build();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     /**
      * Get all employees details
      *
-     * @return List<Employee> with Http status Found.
+     * @return List of EmployeeDtos with Http status Found.
      */
     @GetMapping
-    public ResponseEntity<List<EmployeeDto>> retrieveEmployees() {
-        try {
-            LOGGER.debug("Get all employees");
-            return new ResponseEntity<>(employeeService.retrieveEmployees(), HttpStatus.FOUND);
-        } catch (Exception e) {
-            LOGGER.warn("Error in get all employees", e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    public ResponseEntity<List<EmployeeDto>> getEmployees() {
+        LOGGER.debug("Get all employees");
+        List<EmployeeDto> employeeDtos = employeeService.retrieveEmployees();
+        if (employeeDtos.isEmpty()) {
+            LOGGER.info("Get All employees ");
+            return ResponseEntity.ok(employeeDtos);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 }

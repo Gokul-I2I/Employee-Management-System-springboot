@@ -56,4 +56,5 @@ public interface LaptopService {
      * @return laptopDto {@link Laptop}
      */
     LaptopDto retrieveLaptopById(int id);
+
 }

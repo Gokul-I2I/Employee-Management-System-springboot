@@ -12,4 +12,6 @@ public interface ProjectDao extends JpaRepository<Project, Integer> {
     Project findByProjectIdAndIsDeletedFalse(int id);
 
     List<Project> findByIsDeletedFalse();
+
+    boolean existsByProjectName(String projectName);
 }

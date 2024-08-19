@@ -1,5 +1,7 @@
 package com.ideas2it.ems.controller;
 
+import java.util.List;
+
 import com.ideas2it.ems.dto.EmployeeDto;
 import com.ideas2it.ems.dto.ProjectDto;
 import com.ideas2it.ems.service.ProjectService;
@@ -9,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/projects")
@@ -28,15 +28,9 @@ public class ProjectController {
      * @return ProjectDto with Http status Created.
      */
     @PostMapping
-    public ResponseEntity<ProjectDto> addProject(@RequestBody ProjectDto projectDto) {
-        try {
-            projectDto = projectService.addProject(projectDto);
-            LOGGER.debug("Project Created with id {}", projectDto.getId());
-            return new ResponseEntity<>(projectDto, HttpStatus.CREATED);
-        } catch (Exception e) {
-            LOGGER.warn("Error in laptop Created {}", projectDto.getName());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<ProjectDto> addProject(@RequestBody ProjectDto projectDto) {projectDto = projectService.addProject(projectDto);
+        LOGGER.info("Project Created with id {}", projectDto.getId());
+        return new ResponseEntity<>(projectDto, HttpStatus.CREATED);
     }
 
     /**
@@ -45,15 +39,10 @@ public class ProjectController {
      * @param id : id of the project
      * @return projectDto with Http status No_Content.
      */
-    @PutMapping("/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<ProjectDto> deleteProject(@PathVariable int id) {
-        try {
-            LOGGER.debug("Delete project by its id {}", id);
-            return new ResponseEntity<>(projectService.deleteProject(id), HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            LOGGER.warn("warn in delete project by id {}", id);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("Delete project by its id {}", id);
+        return new ResponseEntity<>(projectService.deleteProject(id), HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -64,13 +53,8 @@ public class ProjectController {
      */
     @PutMapping
     public ResponseEntity<ProjectDto> updateProject(@RequestBody ProjectDto projectDto) {
-        try {
-            LOGGER.debug("Update project details by id {}", projectDto.getId());
-            return new ResponseEntity<>(projectService.updateProject(projectDto), HttpStatus.FOUND);
-        } catch (Exception e) {
-            LOGGER.warn("Error in update  project {}", projectDto.getName());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("Update project details by id {}", projectDto.getId());
+        return new ResponseEntity<>(projectService.updateProject(projectDto), HttpStatus.FOUND);
     }
 
     /**
@@ -79,14 +63,12 @@ public class ProjectController {
      * @param id : id of the project
      * @return EmployeeDto {@link EmployeeDto}
      */
-    @GetMapping("/{id}")
+    @GetMapping("/{id}/employees")
     public ResponseEntity<List<EmployeeDto>> retrieveEmployeesByProjectId(@PathVariable int id) {
-        var employeeDto = projectService.retrieveEmployeesByProjectId(id);
-        if (employeeDto != null) {
-            return ResponseEntity.ok(employeeDto);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        LOGGER.debug("Get employees by project id");
+        List<EmployeeDto> employeeDto = projectService.retrieveEmployeesByProjectId(id);
+        return ResponseEntity.ok(employeeDto);
+
     }
 
     /**
@@ -96,29 +78,19 @@ public class ProjectController {
      */
     @GetMapping
     public ResponseEntity<List<ProjectDto>> retrieveProjects() {
-        try {
-            return new ResponseEntity<>(projectService.retrieveProjects(), HttpStatus.FOUND);
-        } catch (Exception e) {
-            LOGGER.warn("Error in view all projects");
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("Get Projects");
+        return new ResponseEntity<>(projectService.retrieveProjects(), HttpStatus.FOUND);
     }
-
 
     /**
      * Add project to employee
      *
      * @return EmployeeDto {@link EmployeeDto}.
      */
-    @GetMapping("/{employeeId}/project/(projectId)")
+    @PutMapping("/{employeeId}/add_project/{projectId}")
     public ResponseEntity<ProjectDto> addProjectToEmployee(@PathVariable int employeeId, @PathVariable int projectId) {
-        try {
-            
-            return new ResponseEntity<>(projectService.addProjectToEmployee(employeeId, projectId), HttpStatus.ACCEPTED);
-        } catch (Exception e) {
-            LOGGER.warn("Error in get all employees", e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("add project to employee");
+        return new ResponseEntity<>(projectService.addProjectToEmployee(employeeId, projectId), HttpStatus.ACCEPTED);
     }
 
     /**
@@ -127,13 +99,21 @@ public class ProjectController {
      * @param id : id of the project
      * @return ProjectDto {@link ProjectDto}
      */
-    @GetMapping("/?project={id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ProjectDto> retrieveProjectById(@PathVariable int id) {
-        var projectDto = projectService.retrieveProjectById(id);
-        if (projectDto != null) {
-            return ResponseEntity.ok(projectDto);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        LOGGER.debug("Get project by id");
+        ProjectDto projectDto = projectService.retrieveProjectById(id);
+        return ResponseEntity.ok(projectDto);
+    }
+
+    /**
+     * Remove project to employee
+     *
+     * @return EmployeeDto {@link EmployeeDto}.
+     */
+    @PutMapping("/{employeeId}/remove_project/{projectId}")
+    public ResponseEntity<ProjectDto> removeProjectToEmployee(@PathVariable int employeeId, @PathVariable int projectId) {
+        LOGGER.debug("remove project to employee");
+        return new ResponseEntity<>(projectService.removeProjectToEmployee(employeeId, projectId), HttpStatus.ACCEPTED);
     }
 }

@@ -65,4 +65,12 @@ public interface ProjectService {
       * @return ProjectDto {@link ProjectDto}.
       */
      ProjectDto addProjectToEmployee(@PathVariable int employeeId, @PathVariable int projectId);
+
+     /**
+      * Remove project to employee
+      *
+      * @return ProjectDto {@link ProjectDto}.
+      */
+     ProjectDto removeProjectToEmployee(@PathVariable int employeeId, @PathVariable int projectId);
+
 }

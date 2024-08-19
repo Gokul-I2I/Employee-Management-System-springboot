@@ -1,5 +1,7 @@
 package com.ideas2it.ems.controller;
 
+import java.util.List;
+
 import com.ideas2it.ems.dto.EmployeeDto;
 import com.ideas2it.ems.dto.LaptopDto;
 import com.ideas2it.ems.service.LaptopService;
@@ -9,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/laptops")
@@ -29,13 +29,8 @@ public class LaptopController {
      */
     @PostMapping
     public ResponseEntity<LaptopDto> addLaptop(@RequestBody LaptopDto laptopDto) {
-        try {
-            LOGGER.debug("Laptop Created with id {}", laptopDto.getId());
-            return new ResponseEntity<>(laptopService.addLaptop(laptopDto), HttpStatus.CREATED);
-        } catch (Exception e) {
-            LOGGER.warn("Error in laptop created {}",laptopDto.getId(), e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("Laptop Created with id {}", laptopDto.getId());
+        return new ResponseEntity<>(laptopService.addLaptop(laptopDto), HttpStatus.CREATED);
     }
 
     /**
@@ -44,16 +39,11 @@ public class LaptopController {
      * @param id : id of the department
      * @return laptopDto with Http status No_Content.
      */
-    @PutMapping("/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<LaptopDto> deleteLaptop(@PathVariable int id) {
-        try {
-            var laptop = laptopService.deleteLaptop(id);
-            LOGGER.debug("Laptop Deleted with id {}", id);
-            return new ResponseEntity<>(laptop, HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            LOGGER.warn(" Error in Laptop Deleted with id {}", id, e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        var laptop = laptopService.deleteLaptop(id);
+        LOGGER.debug("Laptop Deleted with id {}", id);
+        return new ResponseEntity<>(laptop, HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -64,14 +54,9 @@ public class LaptopController {
      */
     @PutMapping
     public ResponseEntity<LaptopDto> updateLaptop(@RequestBody LaptopDto laptopDto) {
-        try {
-            var laptop = laptopService.updateLaptop(laptopDto);
-            LOGGER.debug("Update Laptop with id {}", laptop.getId());
-            return new ResponseEntity<>(laptop, HttpStatus.ACCEPTED);
-        } catch (Exception e) {
-            LOGGER.warn(" Error in update Laptop with id {}", laptopDto.getId(), e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        var laptop = laptopService.updateLaptop(laptopDto);
+        LOGGER.info("Update Laptop with id {}", laptop.getId());
+        return new ResponseEntity<>(laptop, HttpStatus.ACCEPTED);
     }
 
     /**
@@ -80,14 +65,12 @@ public class LaptopController {
      * @param id : id of the laptop
      * @return EmployeeDto {@link EmployeeDto}
      */
-    @GetMapping("/{id}")
-    public ResponseEntity<EmployeeDto> retrieveEmployeeByLaptopId(@PathVariable int id) {
+    @GetMapping("/{id}/employee")
+    public ResponseEntity<EmployeeDto> getEmployeeByLaptopId(@PathVariable int id) {
+        LOGGER.debug("Get employee by laptop id {} ", id);
         var employeeDto = laptopService.retrieveEmployeeByLaptopId(id);
-        if (employeeDto != null) {
-            return ResponseEntity.ok(employeeDto);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        LOGGER.info("Get employee by laptop id {}", id);
+        return ResponseEntity.ok(employeeDto);
     }
 
     /**
@@ -97,13 +80,22 @@ public class LaptopController {
      */
     @GetMapping
     public ResponseEntity<List<LaptopDto>> retrieveLaptops() {
-        try {
-            var laptops = laptopService.retrieveLaptops();
-            LOGGER.debug("View Laptops");
-            return new ResponseEntity<>(laptops, HttpStatus.FOUND);
-        } catch (Exception e) {
-            LOGGER.warn(" Error in view all laptops",e );
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("View Laptops");
+        var laptops = laptopService.retrieveLaptops();
+        return new ResponseEntity<>(laptops, HttpStatus.FOUND);
+    }
+
+    /**
+     * Get the laptop details by its id
+     *
+     * @param id : id of the laptop
+     * @return laptopDto {@link LaptopDto}
+     */
+    @GetMapping("/{id}")
+    public ResponseEntity<LaptopDto> getLaptopById(@PathVariable int id) {
+        LOGGER.debug("Get department by id {}", id);
+        var laptopDto = laptopService.retrieveLaptopById(id);
+        LOGGER.info("Retrieved department by id {}", id);
+        return new ResponseEntity<>(laptopDto, HttpStatus.FOUND);
     }
 }

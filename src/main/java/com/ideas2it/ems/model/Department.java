@@ -1,7 +1,6 @@
 package com.ideas2it.ems.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.Set;
@@ -33,4 +32,5 @@ public class Department {
     @OneToMany(mappedBy = "department", fetch = FetchType.EAGER)
     @JsonIgnore
     Set<Employee> employees;
+
 }

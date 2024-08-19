@@ -13,4 +13,5 @@ public interface LaptopDao extends JpaRepository<Laptop, Integer> {
 
     List<Laptop> findByIsDeletedFalse();
 
+    boolean existsByLaptopName(String laptopName);
 }

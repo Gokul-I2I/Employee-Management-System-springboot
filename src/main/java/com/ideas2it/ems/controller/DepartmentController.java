@@ -2,6 +2,8 @@ package com.ideas2it.ems.controller;
 
 import java.util.List;
 
+import jakarta.validation.Valid;
+import lombok.SneakyThrows;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +31,9 @@ public class DepartmentController {
      * @return departmentDto with Http status Created.
      */
     @PostMapping
-    public ResponseEntity<DepartmentDto> addDepartment(@RequestBody DepartmentDto departmentDto) {
-        try {
-            LOGGER.debug("Create department {}", departmentDto.getName());
-            return new ResponseEntity<>(departmentService.addDepartment(departmentDto), HttpStatus.CREATED);
-        } catch (Exception e) {
-            LOGGER.error("Error in add Department {}", departmentDto.getName(), e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<DepartmentDto> addDepartment(@Valid @RequestBody DepartmentDto departmentDto) {
+        LOGGER.debug("Create department {}", departmentDto.getName());
+        return new ResponseEntity<>(departmentService.addDepartment(departmentDto), HttpStatus.CREATED);
     }
 
     /**
@@ -45,15 +42,11 @@ public class DepartmentController {
      * @param id : id of the department
      * @return departmentDto with Http status No_Content.
      */
-    @PutMapping("/{id}")
+    @SneakyThrows
+    @DeleteMapping("/{id}")
     public ResponseEntity<DepartmentDto> deleteDepartment(@PathVariable int id) {
-        try {
-            LOGGER.debug("delete department by id {}", id);
-            return new ResponseEntity<>(departmentService.deleteDepartment(id), HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            LOGGER.error("Error in delete Department by id{}", id, e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        LOGGER.debug("delete department by id {}", id);
+        return new ResponseEntity<>(departmentService.deleteDepartment(id), HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -62,15 +55,11 @@ public class DepartmentController {
      * @param departmentDto {@link DepartmentDto}
      * @return departmentDto with Http status Accepted.
      */
+    @SneakyThrows
     @PutMapping
-    public ResponseEntity<DepartmentDto> updateDepartment(@RequestBody DepartmentDto departmentDto) {
-        try {
-            LOGGER.debug("Update Department details {}", departmentDto.getId());
-            return new ResponseEntity<>(departmentService.updateDepartment(departmentDto), HttpStatus.ACCEPTED);
-        } catch (Exception e) {
-            LOGGER.error("Error in update Department details {}", departmentDto.getName(), e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<DepartmentDto> updateDepartment(@Valid @RequestBody DepartmentDto departmentDto) {
+        LOGGER.debug("Update Department details {}", departmentDto.getId());
+        return new ResponseEntity<>(departmentService.updateDepartment(departmentDto), HttpStatus.ACCEPTED);
     }
 
     /**
@@ -79,15 +68,10 @@ public class DepartmentController {
      * @param id : id of the department
      * @return List<EmployeeDto> with Http status Found.
      */
-    @GetMapping("/{id}")
-    public ResponseEntity<List<EmployeeDto>> retrieveEmployeesByDepartmentId(@PathVariable int id) {
-        try {
-            LOGGER.debug("Get employees by department Id {}", id);
-            return new ResponseEntity<>(departmentService.retrieveEmployeesByDepartmentId(id), HttpStatus.FOUND);
-        } catch (Exception e) {
-            LOGGER.error("Error in get employees by Department id {}", id, e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    @GetMapping("/{id}/employees")
+    public ResponseEntity<List<EmployeeDto>> getEmployeesByDepartmentId(@PathVariable int id) {
+        LOGGER.debug("Get employees by department Id {}", id);
+        return new ResponseEntity<>(departmentService.retrieveEmployeesByDepartmentId(id), HttpStatus.FOUND);
     }
 
     /**
@@ -96,13 +80,23 @@ public class DepartmentController {
      * @return List<Department> with httpStatus Found
      */
     @GetMapping
-    public ResponseEntity<List<DepartmentDto>> retrieveDepartments() {
-        try {
-            LOGGER.debug("Get all departments in database");
-            return new ResponseEntity<>(departmentService.retrieveDepartments(), HttpStatus.FOUND);
-        } catch (Exception e) {
-            LOGGER.error("Error in get all departments ", e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<List<DepartmentDto>> getDepartments() {
+        LOGGER.debug("Get all departments in database");
+        var departmentDto = departmentService.retrieveDepartments();
+        LOGGER.info("Get all departments in database");
+        return new ResponseEntity<>(departmentDto, HttpStatus.FOUND);
+    }
+
+    /**
+     * Get the details of department
+     *
+     * @return DepartmentDto with httpStatus Found
+     */
+    @GetMapping("/{id}")
+    public ResponseEntity<DepartmentDto> getDepartmentById(@PathVariable int id) {
+        LOGGER.debug("Get department by id {}", id);
+        var departmentDto = departmentService.retrieveDepartmentById(id);
+        LOGGER.info("Retrieved department by id {}", id);
+        return new ResponseEntity<>(departmentDto, HttpStatus.FOUND);
     }
 }

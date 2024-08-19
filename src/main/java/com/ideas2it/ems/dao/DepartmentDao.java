@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  * Repository interface for accessing Department data from the database.
  */
 @Repository
-public interface DepartmentRepository extends JpaRepository<Department, Integer> {
+public interface DepartmentDao extends JpaRepository<Department, Integer> {
 
     Department findByDepartmentIdAndIsDeletedFalse(int id);
 

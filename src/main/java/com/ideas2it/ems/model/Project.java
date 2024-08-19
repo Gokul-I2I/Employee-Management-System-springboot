@@ -25,7 +25,7 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int projectId;
 
-    @Column
+    @Column(unique = true)
     private String projectName;
 
     @Column
