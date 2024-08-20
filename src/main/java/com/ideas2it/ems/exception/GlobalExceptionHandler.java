@@ -14,12 +14,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(NoSuchFieldException.class)
-    public ResponseEntity<String> handleResourceNotFound(NoSuchFieldException noSuchFieldException) {
-        return new ResponseEntity<>(noSuchFieldException.getMessage(), HttpStatus.NOT_FOUND);
+    @ExceptionHandler(ResourceNotFound.class)
+    public ResponseEntity<String> handleResourceNotFound(ResourceNotFound resourceNotFound) {
+        return new ResponseEntity<>(resourceNotFound.getMessage(), HttpStatus.NOT_FOUND);
     }
 
-    @ResponseStatus(HttpStatus.CONFLICT)
     @ExceptionHandler(MyException.class)
     public ResponseEntity<String> handleAlreadyPresent(MyException myException) {
         return new ResponseEntity<>(myException.getMessage(), HttpStatus.ALREADY_REPORTED);

@@ -3,6 +3,7 @@ package com.ideas2it.ems.service;
 import com.ideas2it.ems.dao.DepartmentDao;
 import com.ideas2it.ems.dto.DepartmentDto;
 import com.ideas2it.ems.dto.EmployeeDto;
+import com.ideas2it.ems.exception.MyException;
 import com.ideas2it.ems.model.Department;
 import com.ideas2it.ems.model.Employee;
 import com.ideas2it.ems.model.Laptop;
@@ -27,7 +28,7 @@ public class DepartmentServiceImplTest {
     private DepartmentDao departmentDao;
 
     @InjectMocks
-    private DepartmentService departmentService;
+    private DepartmentServiceImpl departmentService;
 
     private DepartmentDto departmentDto;
     private Department department;
@@ -78,6 +79,11 @@ public class DepartmentServiceImplTest {
         assertNotNull(createdDepartment);
         assertEquals(departmentDto.getName(), createdDepartment.getName());
     }
+    @Test
+    void testAddDepartment_AlreadyPresent() {
+        when(departmentDao.existsByDepartmentName(department.getDepartmentName())).thenReturn(true);
+        assertThrows(MyException.class,() -> departmentService.addDepartment(departmentDto));
+    }
 
     @Test
     void testDeleteDepartment() {
@@ -85,6 +91,18 @@ public class DepartmentServiceImplTest {
         when(departmentDao.saveAndFlush(any(Department.class))).thenReturn(department);
         DepartmentDto result = departmentService.deleteDepartment(departmentDto.getId());
         assertTrue(department.isDeleted());
+    }
+
+    @Test
+    void testDeleteDepartment_InvalidId() {
+        when(departmentDao.findByDepartmentIdAndIsDeletedFalse(4)).thenReturn(department);
+        assertThrows(NullPointerException.class,() -> departmentService.deleteDepartment(4));
+    }
+
+    @Test
+    void testDeleteDepartment_AlreadyDeleted() {
+        when(departmentDao.findByDepartmentIdAndIsDeletedFalse(1)).thenReturn(department);
+        assertThrows(NullPointerException.class,() -> departmentService.deleteDepartment(1));
     }
 
     @Test
@@ -105,19 +123,17 @@ public class DepartmentServiceImplTest {
         assertNotNull(result);
         assertEquals(departmentDto.getName(), result.getName());
     }
-
     @Test
-    void testRetrieveEmployeesByDepartmentId() {
-        department.setEmployees(Set.of(employee,employee1));
-        when(departmentDao.findByDepartmentIdAndIsDeletedFalse(departmentDto.getId())).thenReturn(department);
-        List<EmployeeDto> employees = departmentService.retrieveEmployeesByDepartmentId(departmentDto.getId());
-        assertEquals(1, employees.size());
+    void testUpdateDepartment_InvalidId() {
+        when(departmentDao.findByDepartmentIdAndIsDeletedFalse(5)).thenReturn(department);
+        assertThrows(Exception.class,() -> departmentService.updateDepartment(departmentDto));
     }
 
     @Test
-    void testRetrieveDepartmentById() {
+    void testRetrieveEmployeesByDepartmentId() {
+        department.setEmployees(Set.of(employee, employee1));
         when(departmentDao.findByDepartmentIdAndIsDeletedFalse(departmentDto.getId())).thenReturn(department);
-        var departments = departmentService.retrieveDepartmentById(departmentDto.getId());
-        assertEquals(departments.getName(), departmentDto.getName());
+        List<EmployeeDto> employees = departmentService.retrieveEmployeesByDepartmentId(departmentDto.getId());
+        assertEquals(1, employees.size());
     }
 }

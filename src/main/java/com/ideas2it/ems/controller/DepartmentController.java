@@ -3,7 +3,6 @@ package com.ideas2it.ems.controller;
 import java.util.List;
 
 import jakarta.validation.Valid;
-import lombok.SneakyThrows;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +41,6 @@ public class DepartmentController {
      * @param id : id of the department
      * @return departmentDto with Http status No_Content.
      */
-    @SneakyThrows
     @DeleteMapping("/{id}")
     public ResponseEntity<DepartmentDto> deleteDepartment(@PathVariable int id) {
         LOGGER.debug("delete department by id {}", id);
@@ -55,7 +53,6 @@ public class DepartmentController {
      * @param departmentDto {@link DepartmentDto}
      * @return departmentDto with Http status Accepted.
      */
-    @SneakyThrows
     @PutMapping
     public ResponseEntity<DepartmentDto> updateDepartment(@Valid @RequestBody DepartmentDto departmentDto) {
         LOGGER.debug("Update Department details {}", departmentDto.getId());
@@ -71,7 +68,7 @@ public class DepartmentController {
     @GetMapping("/{id}/employees")
     public ResponseEntity<List<EmployeeDto>> getEmployeesByDepartmentId(@PathVariable int id) {
         LOGGER.debug("Get employees by department Id {}", id);
-        return new ResponseEntity<>(departmentService.retrieveEmployeesByDepartmentId(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(departmentService.retrieveEmployeesByDepartmentId(id), HttpStatus.OK);
     }
 
     /**
@@ -84,7 +81,7 @@ public class DepartmentController {
         LOGGER.debug("Get all departments in database");
         var departmentDto = departmentService.retrieveDepartments();
         LOGGER.info("Get all departments in database");
-        return new ResponseEntity<>(departmentDto, HttpStatus.FOUND);
+        return new ResponseEntity<>(departmentDto, HttpStatus.OK);
     }
 
     /**
@@ -97,6 +94,6 @@ public class DepartmentController {
         LOGGER.debug("Get department by id {}", id);
         var departmentDto = departmentService.retrieveDepartmentById(id);
         LOGGER.info("Retrieved department by id {}", id);
-        return new ResponseEntity<>(departmentDto, HttpStatus.FOUND);
+        return new ResponseEntity<>(departmentDto, HttpStatus.OK);
     }
 }

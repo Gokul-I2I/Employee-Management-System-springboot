@@ -1063,3 +1063,193 @@ com.ideas2it.ems.exception.MyException: Department Already found : sales
 [INFO ] 2024-08-19 20:33:35.375 [main] EmsApplication - Starting EmsApplication using Java 21.0.4 with PID 25164 (C:\java (1)\ems\target\classes started by gokul.perumal in C:\java (1)\ems)
 [DEBUG] 2024-08-19 20:33:35.392 [main] EmsApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
 [INFO ] 2024-08-19 20:33:35.394 [main] EmsApplication - No active profile set, falling back to 1 default profile: "default"
+[WARN ] 2024-08-20 10:19:57.103 [main] DepartmentServiceImpl - Department Not Found 4
+[WARN ] 2024-08-20 10:23:38.501 [main] DepartmentServiceImpl - Department Not Found 4
+[WARN ] 2024-08-20 10:24:23.082 [main] DepartmentServiceImpl - Department Not Found 1
+[WARN ] 2024-08-20 10:25:05.230 [main] DepartmentServiceImpl - Department Not Found 1
+[WARN ] 2024-08-20 10:25:21.804 [main] DepartmentServiceImpl - Department Not Found 1
+[WARN ] 2024-08-20 10:27:10.423 [main] DepartmentServiceImpl - Department Not Found 1
+[WARN ] 2024-08-20 10:27:36.733 [main] DepartmentServiceImpl - Department Not Found 1
+[WARN ] 2024-08-20 10:31:20.326 [main] DepartmentServiceImpl - Department Not Found 5
+[WARN ] 2024-08-20 10:33:33.736 [main] DepartmentServiceImpl - Department Not Found 4
+[WARN ] 2024-08-20 10:33:53.341 [main] DepartmentServiceImpl - Department Not Found 4
+[WARN ] 2024-08-20 10:34:19.166 [main] DepartmentServiceImpl - Department Not Found 4
+[WARN ] 2024-08-20 10:45:58.657 [main] EmployeeServiceImpl - Employee Already Deleted 1
+[WARN ] 2024-08-20 11:14:20.890 [main] EmployeeServiceImpl - employee not Found 3
+[WARN ] 2024-08-20 11:52:10.647 [main] DepartmentServiceImpl - Department Already Found with this nameit
+[WARN ] 2024-08-20 11:53:31.047 [main] LaptopServiceImpl - Laptop Already Found in DB Thinkpadt141
+[WARN ] 2024-08-20 11:57:36.382 [main] DepartmentServiceImpl - Department Already Found with this nameit
+[WARN ] 2024-08-20 12:00:32.525 [main] DepartmentServiceImpl - Department Already Found with this nameit
+[WARN ] 2024-08-20 12:00:32.746 [main] EmployeeServiceImpl - Employee Not Found 1
+[WARN ] 2024-08-20 12:00:32.924 [main] LaptopServiceImpl - Laptop Already Found in DB Thinkpadt141
+[WARN ] 2024-08-20 12:01:27.790 [main] EmployeeServiceImpl - Employee Not Found 1
+[WARN ] 2024-08-20 12:01:59.955 [main] EmployeeServiceImpl - Employee Not Found 1
+[WARN ] 2024-08-20 12:23:35.656 [main] LaptopServiceImpl - Project Already Found 
+[WARN ] 2024-08-20 12:34:28.644 [main] LaptopServiceImpl - Laptop Already Found in DB Thinkpadt141
+[WARN ] 2024-08-20 12:35:14.393 [main] LaptopServiceImpl - Project Already Found 
+[WARN ] 2024-08-20 12:35:14.624 [main] LaptopServiceImpl - Laptop Already Found in DB Thinkpadt141
+[WARN ] 2024-08-20 12:35:14.796 [main] DepartmentServiceImpl - Department Already Found with this nameit
+[WARN ] 2024-08-20 12:35:14.906 [main] EmployeeServiceImpl - Employee Not Found 1
+[WARN ] 2024-08-20 12:36:22.158 [main] DepartmentServiceImpl - Department Already Found with this nameit
+[WARN ] 2024-08-20 12:36:22.359 [main] EmployeeServiceImpl - Employee Not Found 1
+[WARN ] 2024-08-20 12:36:22.465 [main] LaptopServiceImpl - Laptop Already Found in DB Thinkpadt141
+[WARN ] 2024-08-20 12:36:22.602 [main] LaptopServiceImpl - Project Already Found 
+[DEBUG] 2024-08-20 12:58:21.277 [main] DepartmentController - Create department it
+[DEBUG] 2024-08-20 13:00:11.647 [main] DepartmentController - delete department by id 1
+[DEBUG] 2024-08-20 13:01:01.072 [main] DepartmentController - delete department by id 1
+[DEBUG] 2024-08-20 13:02:26.336 [main] DepartmentController - delete department by id 1
+[DEBUG] 2024-08-20 13:07:21.232 [main] DepartmentController - Update Department details 1
+[DEBUG] 2024-08-20 13:09:55.875 [main] DepartmentController - Get department by id 1
+[INFO ] 2024-08-20 13:09:55.887 [main] DepartmentController - Retrieved department by id 1
+[DEBUG] 2024-08-20 13:12:54.236 [main] DepartmentController - Get all departments in database
+[INFO ] 2024-08-20 13:12:54.249 [main] DepartmentController - Get all departments in database
+[DEBUG] 2024-08-21 01:02:03.145 [main] DepartmentController - Get department by id 1
+[INFO ] 2024-08-21 01:02:03.160 [main] DepartmentController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:04:24.060 [main] LaptopController - View Laptops
+[INFO ] 2024-08-21 01:04:24.117 [main] LaptopController - Update Laptop with id 1
+[DEBUG] 2024-08-21 01:04:24.132 [main] LaptopController - Laptop Deleted with id 1
+[DEBUG] 2024-08-21 01:04:24.137 [main] LaptopController - Get department by id 1
+[INFO ] 2024-08-21 01:04:24.138 [main] LaptopController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:04:24.144 [main] LaptopController - Laptop Created with id 1
+[DEBUG] 2024-08-21 01:05:53.229 [main] LaptopController - View Laptops
+[INFO ] 2024-08-21 01:05:53.298 [main] LaptopController - Update Laptop with id 1
+[DEBUG] 2024-08-21 01:05:53.305 [main] LaptopController - Laptop Deleted with id 1
+[DEBUG] 2024-08-21 01:05:53.311 [main] LaptopController - Get department by id 1
+[INFO ] 2024-08-21 01:05:53.312 [main] LaptopController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:05:53.318 [main] LaptopController - Laptop Created with id 1
+[DEBUG] 2024-08-21 01:07:23.532 [main] ProjectController - Get project by id
+[DEBUG] 2024-08-21 01:07:23.602 [main] ProjectController - Get Projects
+[DEBUG] 2024-08-21 01:07:23.628 [main] ProjectController - Update project details by id 1
+[INFO ] 2024-08-21 01:07:23.636 [main] ProjectController - Project Created with id 1
+[DEBUG] 2024-08-21 01:07:23.644 [main] ProjectController - Delete project by its id 1
+[DEBUG] 2024-08-21 01:07:57.921 [main] ProjectController - Get project by id
+[DEBUG] 2024-08-21 01:07:57.973 [main] ProjectController - Get Projects
+[DEBUG] 2024-08-21 01:07:57.978 [main] ProjectController - Update project details by id 1
+[INFO ] 2024-08-21 01:07:57.999 [main] ProjectController - Project Created with id 1
+[DEBUG] 2024-08-21 01:07:58.005 [main] ProjectController - Delete project by its id 1
+[DEBUG] 2024-08-21 01:08:54.325 [main] ProjectController - Get project by id
+[DEBUG] 2024-08-21 01:08:54.370 [main] ProjectController - Get Projects
+[DEBUG] 2024-08-21 01:08:54.376 [main] ProjectController - Update project details by id 1
+[INFO ] 2024-08-21 01:08:54.397 [main] ProjectController - Project Created with id 1
+[DEBUG] 2024-08-21 01:08:54.405 [main] ProjectController - Delete project by its id 1
+[DEBUG] 2024-08-21 01:10:06.875 [main] ProjectController - Get project by id
+[DEBUG] 2024-08-21 01:10:06.930 [main] ProjectController - Get Projects
+[DEBUG] 2024-08-21 01:10:06.935 [main] ProjectController - Update project details by id 1
+[INFO ] 2024-08-21 01:10:06.940 [main] ProjectController - Project Created with id 1
+[DEBUG] 2024-08-21 01:10:06.945 [main] ProjectController - Delete project by its id 1
+[DEBUG] 2024-08-21 01:11:49.219 [main] EmployeeController - Delete employee by id1
+[INFO ] 2024-08-21 01:11:49.236 [main] EmployeeController - Delete employee details by id 1
+[DEBUG] 2024-08-21 01:11:49.276 [main] EmployeeController - Get all employees
+[DEBUG] 2024-08-21 01:11:49.297 [main] EmployeeController - Get employee by id
+[INFO ] 2024-08-21 01:11:49.297 [main] EmployeeController - Get Employee by id 1
+[DEBUG] 2024-08-21 01:11:49.302 [main] EmployeeController - Add employee details to Database it
+[INFO ] 2024-08-21 01:11:49.302 [main] EmployeeController - Employee added 
+[DEBUG] 2024-08-21 01:11:49.307 [main] EmployeeController - Update employee details by id1
+[INFO ] 2024-08-21 01:11:49.307 [main] EmployeeController - Update employee details by id 1
+[DEBUG] 2024-08-21 01:12:48.891 [main] EmployeeController - Delete employee by id1
+[INFO ] 2024-08-21 01:12:48.908 [main] EmployeeController - Delete employee details by id 1
+[DEBUG] 2024-08-21 01:12:48.948 [main] EmployeeController - Get all employees
+[DEBUG] 2024-08-21 01:12:48.969 [main] EmployeeController - Get employee by id
+[INFO ] 2024-08-21 01:12:48.969 [main] EmployeeController - Get Employee by id 1
+[DEBUG] 2024-08-21 01:12:48.974 [main] EmployeeController - Add employee details to Database it
+[INFO ] 2024-08-21 01:12:48.974 [main] EmployeeController - Employee added 
+[DEBUG] 2024-08-21 01:12:48.980 [main] EmployeeController - Update employee details by id1
+[INFO ] 2024-08-21 01:12:48.980 [main] EmployeeController - Update employee details by id 1
+[DEBUG] 2024-08-21 01:13:49.699 [main] EmployeeController - Get all employees
+[INFO ] 2024-08-21 01:13:49.715 [main] EmployeeController - Get All employees 
+[WARN ] 2024-08-21 01:14:18.125 [main] DepartmentServiceImpl - Department Already Found with this nameit
+[WARN ] 2024-08-21 01:14:18.301 [main] EmployeeServiceImpl - Employee Not Found 1
+[WARN ] 2024-08-21 01:14:18.394 [main] LaptopServiceImpl - Laptop Already Found in DB Thinkpadt141
+[DEBUG] 2024-08-21 01:14:18.466 [main] LaptopController - View Laptops
+[INFO ] 2024-08-21 01:14:18.507 [main] LaptopController - Update Laptop with id 1
+[DEBUG] 2024-08-21 01:14:18.511 [main] LaptopController - Laptop Deleted with id 1
+[DEBUG] 2024-08-21 01:14:18.515 [main] LaptopController - Get department by id 1
+[INFO ] 2024-08-21 01:14:18.516 [main] LaptopController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:14:18.520 [main] LaptopController - Laptop Created with id 1
+[DEBUG] 2024-08-21 01:14:18.558 [main] ProjectController - Get project by id
+[DEBUG] 2024-08-21 01:14:18.565 [main] ProjectController - Get Projects
+[DEBUG] 2024-08-21 01:14:18.571 [main] ProjectController - Update project details by id 1
+[INFO ] 2024-08-21 01:14:18.577 [main] ProjectController - Project Created with id 1
+[DEBUG] 2024-08-21 01:14:18.582 [main] ProjectController - Delete project by its id 1
+[WARN ] 2024-08-21 01:14:18.719 [main] LaptopServiceImpl - Project Already Found 
+[DEBUG] 2024-08-21 01:14:18.785 [main] DepartmentController - delete department by id 1
+[DEBUG] 2024-08-21 01:14:18.789 [main] DepartmentController - Create department it
+[DEBUG] 2024-08-21 01:14:18.796 [main] DepartmentController - Update Department details 1
+[DEBUG] 2024-08-21 01:14:18.801 [main] DepartmentController - Get department by id 1
+[INFO ] 2024-08-21 01:14:18.801 [main] DepartmentController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:14:18.806 [main] DepartmentController - Get all departments in database
+[INFO ] 2024-08-21 01:14:18.807 [main] DepartmentController - Get all departments in database
+[DEBUG] 2024-08-21 01:14:18.836 [main] EmployeeController - Delete employee by id1
+[INFO ] 2024-08-21 01:14:18.836 [main] EmployeeController - Delete employee details by id 1
+[DEBUG] 2024-08-21 01:14:18.843 [main] EmployeeController - Get all employees
+[INFO ] 2024-08-21 01:14:18.843 [main] EmployeeController - Get All employees 
+[DEBUG] 2024-08-21 01:14:18.847 [main] EmployeeController - Get employee by id
+[INFO ] 2024-08-21 01:14:18.847 [main] EmployeeController - Get Employee by id 1
+[DEBUG] 2024-08-21 01:14:18.851 [main] EmployeeController - Add employee details to Database it
+[INFO ] 2024-08-21 01:14:18.853 [main] EmployeeController - Employee added 
+[DEBUG] 2024-08-21 01:14:18.857 [main] EmployeeController - Update employee details by id1
+[INFO ] 2024-08-21 01:14:18.857 [main] EmployeeController - Update employee details by id 1
+[WARN ] 2024-08-21 01:14:56.500 [main] DepartmentServiceImpl - Department Already Found with this nameit
+[WARN ] 2024-08-21 01:14:56.661 [main] EmployeeServiceImpl - Employee Not Found 1
+[WARN ] 2024-08-21 01:14:56.729 [main] LaptopServiceImpl - Laptop Already Found in DB Thinkpadt141
+[DEBUG] 2024-08-21 01:14:56.779 [main] LaptopController - View Laptops
+[INFO ] 2024-08-21 01:14:56.798 [main] LaptopController - Update Laptop with id 1
+[DEBUG] 2024-08-21 01:14:56.802 [main] LaptopController - Laptop Deleted with id 1
+[DEBUG] 2024-08-21 01:14:56.809 [main] LaptopController - Get department by id 1
+[INFO ] 2024-08-21 01:14:56.809 [main] LaptopController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:14:56.814 [main] LaptopController - Laptop Created with id 1
+[DEBUG] 2024-08-21 01:14:56.840 [main] ProjectController - Get project by id
+[DEBUG] 2024-08-21 01:14:56.846 [main] ProjectController - Get Projects
+[DEBUG] 2024-08-21 01:14:56.850 [main] ProjectController - Update project details by id 1
+[INFO ] 2024-08-21 01:14:56.856 [main] ProjectController - Project Created with id 1
+[DEBUG] 2024-08-21 01:14:56.860 [main] ProjectController - Delete project by its id 1
+[WARN ] 2024-08-21 01:14:56.935 [main] LaptopServiceImpl - Project Already Found 
+[DEBUG] 2024-08-21 01:14:56.978 [main] DepartmentController - delete department by id 1
+[DEBUG] 2024-08-21 01:14:56.985 [main] DepartmentController - Create department it
+[DEBUG] 2024-08-21 01:14:56.989 [main] DepartmentController - Update Department details 1
+[DEBUG] 2024-08-21 01:14:56.996 [main] DepartmentController - Get department by id 1
+[INFO ] 2024-08-21 01:14:56.997 [main] DepartmentController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:14:57.001 [main] DepartmentController - Get all departments in database
+[INFO ] 2024-08-21 01:14:57.001 [main] DepartmentController - Get all departments in database
+[DEBUG] 2024-08-21 01:14:57.017 [main] EmployeeController - Delete employee by id1
+[INFO ] 2024-08-21 01:14:57.017 [main] EmployeeController - Delete employee details by id 1
+[DEBUG] 2024-08-21 01:14:57.020 [main] EmployeeController - Get all employees
+[INFO ] 2024-08-21 01:14:57.021 [main] EmployeeController - Get All employees 
+[DEBUG] 2024-08-21 01:14:57.026 [main] EmployeeController - Get employee by id
+[INFO ] 2024-08-21 01:14:57.026 [main] EmployeeController - Get Employee by id 1
+[DEBUG] 2024-08-21 01:14:57.031 [main] EmployeeController - Add employee details to Database it
+[INFO ] 2024-08-21 01:14:57.031 [main] EmployeeController - Employee added 
+[DEBUG] 2024-08-21 01:14:57.035 [main] EmployeeController - Update employee details by id1
+[INFO ] 2024-08-21 01:14:57.036 [main] EmployeeController - Update employee details by id 1
+[WARN ] 2024-08-21 01:15:46.265 [main] DepartmentServiceImpl - Department Already Found with this nameit
+[WARN ] 2024-08-21 01:15:46.437 [main] EmployeeServiceImpl - Employee Not Found 1
+[WARN ] 2024-08-21 01:15:46.572 [main] LaptopServiceImpl - Laptop Already Found in DB Thinkpadt141
+[DEBUG] 2024-08-21 01:15:46.667 [main] LaptopController - View Laptops
+[INFO ] 2024-08-21 01:15:46.721 [main] LaptopController - Update Laptop with id 1
+[DEBUG] 2024-08-21 01:15:46.728 [main] LaptopController - Laptop Deleted with id 1
+[DEBUG] 2024-08-21 01:15:46.733 [main] LaptopController - Get department by id 1
+[INFO ] 2024-08-21 01:15:46.733 [main] LaptopController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:15:46.738 [main] LaptopController - Laptop Created with id 1
+[DEBUG] 2024-08-21 01:15:46.785 [main] ProjectController - Get project by id
+[DEBUG] 2024-08-21 01:15:46.795 [main] ProjectController - Get Projects
+[DEBUG] 2024-08-21 01:15:46.801 [main] ProjectController - Update project details by id 1
+[INFO ] 2024-08-21 01:15:46.807 [main] ProjectController - Project Created with id 1
+[DEBUG] 2024-08-21 01:15:46.815 [main] ProjectController - Delete project by its id 1
+[WARN ] 2024-08-21 01:15:46.932 [main] LaptopServiceImpl - Project Already Found 
+[DEBUG] 2024-08-21 01:15:47.001 [main] DepartmentController - delete department by id 1
+[DEBUG] 2024-08-21 01:15:47.009 [main] DepartmentController - Create department it
+[DEBUG] 2024-08-21 01:15:47.015 [main] DepartmentController - Update Department details 1
+[DEBUG] 2024-08-21 01:15:47.024 [main] DepartmentController - Get department by id 1
+[INFO ] 2024-08-21 01:15:47.024 [main] DepartmentController - Retrieved department by id 1
+[DEBUG] 2024-08-21 01:15:47.029 [main] DepartmentController - Get all departments in database
+[INFO ] 2024-08-21 01:15:47.031 [main] DepartmentController - Get all departments in database
+[DEBUG] 2024-08-21 01:15:47.055 [main] EmployeeController - Delete employee by id1
+[INFO ] 2024-08-21 01:15:47.055 [main] EmployeeController - Delete employee details by id 1
+[DEBUG] 2024-08-21 01:15:47.062 [main] EmployeeController - Get all employees
+[INFO ] 2024-08-21 01:15:47.063 [main] EmployeeController - Get All employees 
+[DEBUG] 2024-08-21 01:15:47.067 [main] EmployeeController - Get employee by id
+[INFO ] 2024-08-21 01:15:47.068 [main] EmployeeController - Get Employee by id 1
+[DEBUG] 2024-08-21 01:15:47.072 [main] EmployeeController - Add employee details to Database it
+[INFO ] 2024-08-21 01:15:47.073 [main] EmployeeController - Employee added 
+[DEBUG] 2024-08-21 01:15:47.078 [main] EmployeeController - Update employee details by id1
+[INFO ] 2024-08-21 01:15:47.088 [main] EmployeeController - Update employee details by id 1

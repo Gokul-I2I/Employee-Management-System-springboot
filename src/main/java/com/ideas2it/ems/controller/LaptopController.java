@@ -82,7 +82,7 @@ public class LaptopController {
     public ResponseEntity<List<LaptopDto>> retrieveLaptops() {
         LOGGER.debug("View Laptops");
         var laptops = laptopService.retrieveLaptops();
-        return new ResponseEntity<>(laptops, HttpStatus.FOUND);
+        return new ResponseEntity<>(laptops, HttpStatus.OK);
     }
 
     /**
@@ -96,6 +96,6 @@ public class LaptopController {
         LOGGER.debug("Get department by id {}", id);
         var laptopDto = laptopService.retrieveLaptopById(id);
         LOGGER.info("Retrieved department by id {}", id);
-        return new ResponseEntity<>(laptopDto, HttpStatus.FOUND);
+        return new ResponseEntity<>(laptopDto, HttpStatus.OK);
     }
 }

@@ -54,7 +54,7 @@ public class ProjectController {
     @PutMapping
     public ResponseEntity<ProjectDto> updateProject(@RequestBody ProjectDto projectDto) {
         LOGGER.debug("Update project details by id {}", projectDto.getId());
-        return new ResponseEntity<>(projectService.updateProject(projectDto), HttpStatus.FOUND);
+        return new ResponseEntity<>(projectService.updateProject(projectDto), HttpStatus.OK);
     }
 
     /**
@@ -79,7 +79,7 @@ public class ProjectController {
     @GetMapping
     public ResponseEntity<List<ProjectDto>> retrieveProjects() {
         LOGGER.debug("Get Projects");
-        return new ResponseEntity<>(projectService.retrieveProjects(), HttpStatus.FOUND);
+        return new ResponseEntity<>(projectService.retrieveProjects(), HttpStatus.OK);
     }
 
     /**
@@ -90,7 +90,7 @@ public class ProjectController {
     @PutMapping("/{employeeId}/add_project/{projectId}")
     public ResponseEntity<ProjectDto> addProjectToEmployee(@PathVariable int employeeId, @PathVariable int projectId) {
         LOGGER.debug("add project to employee");
-        return new ResponseEntity<>(projectService.addProjectToEmployee(employeeId, projectId), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(projectService.addProjectToEmployee(employeeId, projectId), HttpStatus.OK);
     }
 
     /**
@@ -114,6 +114,6 @@ public class ProjectController {
     @PutMapping("/{employeeId}/remove_project/{projectId}")
     public ResponseEntity<ProjectDto> removeProjectToEmployee(@PathVariable int employeeId, @PathVariable int projectId) {
         LOGGER.debug("remove project to employee");
-        return new ResponseEntity<>(projectService.removeProjectToEmployee(employeeId, projectId), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(projectService.removeProjectToEmployee(employeeId, projectId), HttpStatus.OK);
     }
 }

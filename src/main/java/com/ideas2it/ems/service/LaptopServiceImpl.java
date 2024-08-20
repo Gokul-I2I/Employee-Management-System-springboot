@@ -3,6 +3,7 @@ package com.ideas2it.ems.service;
 import com.ideas2it.ems.dto.LaptopDto;
 import com.ideas2it.ems.dto.EmployeeDto;
 import com.ideas2it.ems.exception.MyException;
+import com.ideas2it.ems.exception.ResourceNotFound;
 import com.ideas2it.ems.mapper.LaptopMapper;
 import com.ideas2it.ems.mapper.EmployeeMapper;
 import com.ideas2it.ems.model.Laptop;
@@ -36,7 +37,7 @@ public class LaptopServiceImpl implements LaptopService {
         var laptop = laptopDao.findByLaptopIdAndIsDeletedFalse(id);
         if (laptop == null) {
             LOGGER.warn("laptop not Found {}", id);
-            throw new MyException("Laptop not found :" + id);
+            throw new ResourceNotFound("Laptop not found :" + id);
         }
         laptop.setDeleted(true);
         return LaptopMapper.convertDto(laptopDao.saveAndFlush(laptop));
@@ -51,7 +52,7 @@ public class LaptopServiceImpl implements LaptopService {
         var laptop = laptopDao.findByLaptopIdAndIsDeletedFalse(laptopDto.getId());
         if (laptop == null) {
             LOGGER.warn("Laptop not Found {}", laptopDto.getId());
-            throw new MyException("Laptop not found :" + laptopDto.getId());
+            throw new ResourceNotFound("Laptop not found :" + laptopDto.getId());
         }
         laptop.setLaptopName(laptopDto.getName());
         return LaptopMapper.convertDto(laptopDao.save(laptop));
@@ -62,11 +63,11 @@ public class LaptopServiceImpl implements LaptopService {
         var laptop = laptopDao.findByLaptopIdAndIsDeletedFalse(id);
         if (laptop == null) {
             LOGGER.warn("Laptop not Found {}", id);
-            throw new MyException("Laptop not Found : " + id);
+            throw new ResourceNotFound("Laptop not Found : " + id);
         }
         if (laptop.getEmployee() == null) {
             LOGGER.warn("Employee not Found in this laptop id {}", id);
-            throw new MyException("Employees not found in laptop id : " + id);
+            throw new ResourceNotFound("Employees not found in laptop id : " + id);
         }
         return EmployeeMapper.convertDto(laptop.getEmployee());
     }
@@ -77,7 +78,7 @@ public class LaptopServiceImpl implements LaptopService {
         var laptops = laptopDao.findByIsDeletedFalse();
         if (laptops.isEmpty()) {
             LOGGER.warn("No Laptops Available");
-            throw new MyException("No Laptops Available");
+            throw new ResourceNotFound("No Laptops Available");
         }
         for (Laptop laptop : laptops) {
             laptopDtos.add(LaptopMapper.convertDto(laptop));
@@ -87,10 +88,10 @@ public class LaptopServiceImpl implements LaptopService {
 
     @Override
     public LaptopDto retrieveLaptopById(int id) {
-        var laptop = laptopDao.findByLaptopIdAndIsDeletedFalse(id);
+        Laptop laptop = laptopDao.findByLaptopIdAndIsDeletedFalse(id);
         if (laptop == null) {
             LOGGER.warn("Laptop not Found {}", id);
-            throw new MyException("Laptop not Found");
+            throw new ResourceNotFound("Laptop not Found");
         }
         return LaptopMapper.convertDto(laptop);
     }

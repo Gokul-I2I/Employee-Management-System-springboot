@@ -46,7 +46,7 @@ public class EmployeeController {
         LOGGER.debug("Delete employee by id{}", id);
         EmployeeDto employeeDto = employeeService.deleteEmployee(id);
         LOGGER.info("Delete employee details by id {}", id);
-        return new ResponseEntity<>(employeeDto, HttpStatus.GONE);
+        return new ResponseEntity<>(employeeDto, HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -77,12 +77,8 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable int id) {
         LOGGER.debug("Get employee by id");
         EmployeeDto employeeDto = employeeService.retrieveEmployeeById(id);
-        if (employeeDto != null) {
-            LOGGER.info("Get Employee by id {}", id);
-            return new ResponseEntity<>(employeeDto, HttpStatus.FOUND);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        LOGGER.info("Get Employee by id {}", id);
+        return new ResponseEntity<>(employeeDto, HttpStatus.OK);
     }
 
     /**
@@ -94,12 +90,8 @@ public class EmployeeController {
     public ResponseEntity<List<EmployeeDto>> getEmployees() {
         LOGGER.debug("Get all employees");
         List<EmployeeDto> employeeDtos = employeeService.retrieveEmployees();
-        if (employeeDtos.isEmpty()) {
-            LOGGER.info("Get All employees ");
-            return ResponseEntity.ok(employeeDtos);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        LOGGER.info("Get All employees ");
+        return ResponseEntity.ok(employeeDtos);
     }
 }
 

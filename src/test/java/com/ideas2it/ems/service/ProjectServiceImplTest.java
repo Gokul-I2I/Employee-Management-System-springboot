@@ -1,9 +1,9 @@
 package com.ideas2it.ems.service;
 
-import com.ideas2it.ems.dao.EmployeeDao;
 import com.ideas2it.ems.dao.ProjectDao;
 import com.ideas2it.ems.dto.ProjectDto;
 import com.ideas2it.ems.dto.EmployeeDto;
+import com.ideas2it.ems.exception.MyException;
 import com.ideas2it.ems.model.Department;
 import com.ideas2it.ems.model.Project;
 import com.ideas2it.ems.model.Employee;
@@ -33,8 +33,10 @@ public class ProjectServiceImplTest {
 
     private ProjectDto projectDto;
     private Project project;
+    private Project project1;
     private Department department;
-    private Employee employee, employee1;
+    private Employee employee;
+    private Employee employee1;
 
     @BeforeEach
     void setUp() {
@@ -46,6 +48,12 @@ public class ProjectServiceImplTest {
                 .projectId(1)
                 .projectName("web3")
                 .isDeleted(false)
+                .build();
+
+        project1 = Project.builder()
+                .projectId(2)
+                .projectName("web")
+                .isDeleted(true)
                 .build();
 
         projectDto = ProjectDto.builder()
@@ -62,7 +70,7 @@ public class ProjectServiceImplTest {
         employee = Employee.builder()
                 .id(1)
                 .name("gokul")
-                .dateOfBirth(LocalDate.of(2000,12,12))
+                .dateOfBirth(LocalDate.of(2000, 12, 12))
                 .laptop(laptop)
                 .department(department)
                 .projects(Set.of(project))
@@ -72,7 +80,7 @@ public class ProjectServiceImplTest {
         employee1 = Employee.builder()
                 .id(2)
                 .name("kishore")
-                .dateOfBirth(LocalDate.of(2000,12,12))
+                .dateOfBirth(LocalDate.of(2000, 12, 12))
                 .isDeleted(false)
                 .department(department)
                 .projects(Set.of(project))
@@ -98,6 +106,24 @@ public class ProjectServiceImplTest {
     }
 
     @Test
+    void testDeleteProject_InvalidId() {
+        when(projectDao.findByProjectIdAndIsDeletedFalse(4)).thenReturn(project);
+        assertThrows(NullPointerException.class, () -> projectService.deleteProject(4));
+    }
+
+    @Test
+    void testDeleteProject_AlreadyDeleted() {
+        when(projectDao.findByProjectIdAndIsDeletedFalse(2)).thenReturn(project);
+        assertThrows(NullPointerException.class, () -> projectService.deleteProject(2));
+    }
+
+    @Test
+    void testAddProject_AlreadyPresent() {
+        when(projectDao.existsByProjectName(project.getProjectName())).thenReturn(true);
+        assertThrows(MyException.class, () -> projectService.addProject(projectDto));
+    }
+
+    @Test
     void testGetAllProjects() {
         List<Project> projects = List.of(project);
         when(projectDao.findByIsDeletedFalse()).thenReturn(projects);
@@ -119,7 +145,7 @@ public class ProjectServiceImplTest {
 
     @Test
     void testRetrieveEmployeesByProjectId() {
-        project.setEmployees(Set.of(employee,employee1));
+        project.setEmployees(Set.of(employee, employee1));
         when(projectDao.findByProjectIdAndIsDeletedFalse(projectDto.getId())).thenReturn(project);
         List<EmployeeDto> employees = projectService.retrieveEmployeesByProjectId(projectDto.getId());
         assertEquals(1, employees.size());

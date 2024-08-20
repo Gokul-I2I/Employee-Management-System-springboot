@@ -2,6 +2,7 @@ package com.ideas2it.ems.service;
 
 import com.ideas2it.ems.dao.LaptopDao;
 import com.ideas2it.ems.dto.LaptopDto;
+import com.ideas2it.ems.exception.MyException;
 import com.ideas2it.ems.model.Department;
 import com.ideas2it.ems.model.Laptop;
 import com.ideas2it.ems.model.Employee;
@@ -29,6 +30,7 @@ public class LaptopServiceImplTest {
 
     private LaptopDto laptopDto;
     private Laptop laptop;
+    private Laptop laptop1;
     private Employee employee;
     private Department department;
 
@@ -37,6 +39,11 @@ public class LaptopServiceImplTest {
         laptop = Laptop.builder()
                 .laptopId(1)
                 .laptopName("Thinkpadt14")
+                .isDeleted(true)
+                .build();
+        laptop1 = Laptop.builder()
+                .laptopId(2)
+                .laptopName("Thinkpad")
                 .isDeleted(false)
                 .build();
 
@@ -67,13 +74,27 @@ public class LaptopServiceImplTest {
         assertNotNull(result);
         assertEquals(result.getName(), laptopDto.getName());
     }
-
+    @Test
+    void testAddLaptop_AlreadyPresent() {
+        when(laptopDao.existsByLaptopName(laptop.getLaptopName())).thenReturn(true);
+        assertThrows(MyException.class,() -> laptopService.addLaptop(laptopDto));
+    }
     @Test
     void testDeleteLaptop() {
         when(laptopDao.findByLaptopIdAndIsDeletedFalse(laptopDto.getId())).thenReturn(laptop);
         when(laptopDao.saveAndFlush(any(Laptop.class))).thenReturn(laptop);
         laptopService.deleteLaptop(laptopDto.getId());
         assertTrue(laptop.isDeleted());
+    }
+    @Test
+    void testDeleteLaptop_InvalidId() {
+        when(laptopDao.findByLaptopIdAndIsDeletedFalse(4)).thenReturn(laptop);
+        assertThrows(NullPointerException.class,() -> laptopService.deleteLaptop(4));
+    }
+    @Test
+    void testDeleteLaptop_AlreadyDeleted() {
+        when(laptopDao.findByLaptopIdAndIsDeletedFalse(2)).thenReturn(laptop);
+        assertThrows(NullPointerException.class,() -> laptopService.deleteLaptop(2));
     }
 
     @Test
@@ -90,9 +111,15 @@ public class LaptopServiceImplTest {
         when(laptopDao.existsByLaptopName(laptop.getLaptopName())).thenReturn(false);
         laptop.setLaptopName("fb");
         when(laptopDao.save(any(Laptop.class))).thenReturn(laptop);
-        var result = laptopService.updateLaptop(laptopDto);
+        LaptopDto result = laptopService.updateLaptop(laptopDto);
         assertNotNull(result);
         assertEquals(laptopDto.getName(), result.getName());
+    }
+
+    @Test
+    void testUpdateLaptop_InvalidId() {
+        when(laptopDao.findByLaptopIdAndIsDeletedFalse(laptopDto.getId())).thenReturn(laptop);
+        assertThrows(NullPointerException.class,() -> laptopService.updateLaptop(laptopDto));
     }
 
     @Test
